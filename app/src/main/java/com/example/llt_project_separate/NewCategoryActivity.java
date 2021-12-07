@@ -12,7 +12,7 @@ import android.view.View;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
-public class TextToSignSectionActivity extends AppCompatActivity {
+public class NewCategoryActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private FloatingActionButton toHomePageButton;
@@ -21,7 +21,7 @@ public class TextToSignSectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text_to_sign_section);
+        setContentView(R.layout.activity_new_category);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         tabLayout = findViewById(R.id.tabLayout);
@@ -31,7 +31,7 @@ public class TextToSignSectionActivity extends AppCompatActivity {
         toHomePageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TextToSignSectionActivity.this, MainActivity.class);
+                Intent intent = new Intent(NewCategoryActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -39,7 +39,7 @@ public class TextToSignSectionActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(""));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final TextToSignSectionAdapter adapter = new TextToSignSectionAdapter(getSupportFragmentManager(), this);
+        final NewCategoryFormAdapter adapter = new NewCategoryFormAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
